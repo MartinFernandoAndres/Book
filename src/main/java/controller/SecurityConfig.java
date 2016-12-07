@@ -18,20 +18,17 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     public void configureGlobal(AuthenticationManagerBuilder auth) throws Exception {
         System.out.println("abc");
         auth.inMemoryAuthentication().withUser("user").password("1234").roles("USER");
-        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("ADMIN");
-
+        auth.inMemoryAuthentication().withUser("admin").password("admin").roles("USER","ADMIN");
     }
-
+   
     @Override
     protected void configure(HttpSecurity http) throws Exception {
         http.authorizeRequests()
-            .antMatchers("/booking/search").access("hasAuthority('USER')")
-            .antMatchers("/booking/delete").access("hasAuthority('ADMIN')")
-            .and()
-            .formLogin()
-            .and()
-            .logout()
-            .logoutRequestMatcher(new AntPathRequestMatcher("/logout"))
-            .logoutSuccessUrl("/login");
+		.anyRequest().authenticated()
+		.and()
+	.formLogin()
+		.loginPage("/login") 
+		.permitAll();  
     }    
+
 }
