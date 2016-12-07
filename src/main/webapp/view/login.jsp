@@ -47,12 +47,15 @@
 		<div id="login-box">
 	
 			<h2>Login with Username and Password</h2>
-	
-			<c:if test="${not empty error}">
-				<div class="error">${error}</div>
+			<c:if test="${param.error != null}">        
+				<p>
+					Invalid username and password.
+				</p>
 			</c:if>
-			<c:if test="${not empty msg}">
-				<div class="msg">${msg}</div>
+			<c:if test="${param.logout != null}">       
+				<p>
+					You have been logged out.
+				</p>
 			</c:if>
 	
 			<form name='loginForm'  action="login" method='POST'>
