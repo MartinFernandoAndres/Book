@@ -1,29 +1,24 @@
-<%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
+<%@ page language="java" contentType="text/html; charset=UTF-8" pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html>
 <html>
-<head>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
-<title>Users</title>
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
-
-<style type="text/css">
-body {
-	margin-top: 70px;
-}
-a{
-  font: 130% sans-serif;
-}
-</style>
-<body>
-<span style="float: top">
-	<a href="?language=en">English</a>	<a href="?language=es">Español</a>
-</span>
-<br><br>
+	<head>
+	<link rel="stylesheet" href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
+	<title>Users</title>
+	<style type="text/css">
+		body {
+			margin-top: 70px;
+		}
+		a{
+		  font: 130% sans-serif;
+		}
+	</style>
+	<body>
+		<span style="float: top">
+			<a href="?language=en">English</a>	<a href="?language=es">Español</a>
+		</span>
+		<br><br>
 		<div class="page-header">
 			<h1>List of Users</h1>
 		</div>
@@ -56,6 +51,5 @@ a{
 			</tbody>
 		</table>
 		<br>
-
-</body>
+	</body>
 </html>
