@@ -6,7 +6,7 @@ $(document).ajaxSend(function(e, xhr, options) {
 }); 
  
 $(document).ready(function(){
-	
+	 
 	var $books = $('#books');
 	var $title = $('#title');
 	
