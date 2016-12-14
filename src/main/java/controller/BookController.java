@@ -11,8 +11,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import clases.Book;
+import clases.User;
 
 import dao.IBookDAO;
+import dao.IUserDAO;
 
 
 @Controller
@@ -21,7 +23,15 @@ public class BookController {
 	
 	@Autowired
 	IBookDAO bookService;
-	
+
+	@Autowired
+	IUserDAO userService;
+
+	@RequestMapping("/User")
+	public ModelAndView User(){
+		List<User> listUser = userService.listUser();
+		return new ModelAndView("/Book/User", "listUser", listUser);
+	}
 	
 	@RequestMapping("/")
 	public ModelAndView List(){

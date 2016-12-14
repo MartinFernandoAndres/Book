@@ -63,7 +63,7 @@ a{
 	<br>
 	
 	<c:if test="${pageContext.request.userPrincipal.name =='admin'}">
-		<a href="<%=request.getContextPath()%>/Book/Users"><spring:message code="tercer_mensaje"/></a>
+		<a href="<%=request.getContextPath()%>/Book/User"><spring:message code="tercer_mensaje"/></a>
 		<br><br>
 	</c:if>
 

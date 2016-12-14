@@ -32,7 +32,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>clases.Book</value>
-
+				<value>clases.User</value>
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -63,6 +63,7 @@
 
 	<!-- DAOs --> 
 	<bean id="bookDao" class="dao.BookDAO" />
+	<bean id="userDao" class="dao.UserDAO" />
 	
 	<!-- Internacionalizacion -->
 	<bean id="messageSource"
