@@ -1,5 +1,7 @@
 <html>
 	<head>
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
 		<title> Loose Search </title>
 		
 	</head>

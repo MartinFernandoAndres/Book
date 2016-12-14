@@ -8,6 +8,8 @@
 
 <html>
 	<head>
+	<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
 		<style>
 .error {
 	padding: 15px;
