@@ -33,6 +33,7 @@ public class BookController {
 		return new ModelAndView("/Book/User", "listUser", listUser);
 	}
 	
+	
 	@RequestMapping("/")
 	public ModelAndView List(){
 		List<Book> listBook = bookService.listBook();

@@ -7,13 +7,11 @@
 <%@taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@page session="true"%>
 
-<link rel="stylesheet"
-	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
- 
 <html>
 <head>
 <title>Book</title>
-
+<link rel="stylesheet"
+	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
 <style type="text/css">
 body {
 	margin-top: 70px;
@@ -31,7 +29,7 @@ a{
 
 <div class="container">
 	<div class="page-header">
-		<h1>Book</h1>
+		<h1><spring:message code="titulo_pagina"/></h1>
 	</div>
 </div>
 

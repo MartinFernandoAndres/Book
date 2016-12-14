@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
+<%@ taglib uri="http://www.springframework.org/tags" prefix="spring"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 	<head>
@@ -7,7 +8,7 @@
 	href="<%=request.getContextPath()%>/resources/css/bootstrap.min.css" />
 	
 		<meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-		<title>Add Book</title>	
+		<title><spring:message code="segundo_mensaje"/></title>	
 		
 		<meta name="_csrf" content="${_csrf.token}"/>
 		<meta name="_csrf_header" content="${_csrf.headerName}"/> 
@@ -17,22 +18,26 @@
 		<script type="text/javascript" src ="${pageContext.request.contextPath}/resources/abm.js">
 		</script>	
 	</head>
+	<span style="float: top">
+	<a href="?language=en">English</a>	<a href="?language=es">Español</a>
+</span>
+<br><br>
 	<body>
-		<h2>Books</h2>
+		<h2><spring:message code="titulo_pagina"/></h2>
 		<ul id="books"></ul>
 		<br>
 			
 			<p> 
-				Title: <input type="text" id="title"/>
+				<spring:message code="lista_titulo"/>: <input type="text" id="title"/>
 			</p> 
-			<button id="botonID"> Add</button>
+			<button id="botonID"> <spring:message code="agregar"/></button>
 			
 			<br>
 			<br>
 			
-			Title to modify: <input type="text" id="modify"/>
+			<spring:message code="tituloamodificar"/>: <input type="text" id="modify"/>
 	
-			<button class="botonModify" id=""  > Modify</button>
+			<button class="botonModify" id=""  ><spring:message code="modificar"/></button>
 		
 	</body>
 </html>

@@ -9,7 +9,7 @@ public class SharedController {
 	
 	@RequestMapping("/")
 	public ModelAndView index(){
-		return new ModelAndView("/login");
+		return new ModelAndView("/index");
 	}
 
 	@RequestMapping("/login")

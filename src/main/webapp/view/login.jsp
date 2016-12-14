@@ -41,22 +41,26 @@
 	border: 1px solid #000;
 }
 </style>
-
-		<title>Books</title>
+		<title><spring:message code="titulo_pagina"/></title>
 	</head>
+	
+	<span style="float: top">
+	<a href="?language=en">English</a>	<a href="?language=es">Español</a>
+</span>
+<br><br>
 	
 	<body onload='document.loginForm.username.focus();'>	
 		<div id="login-box">
 	
-			<h2>Login with Username and Password</h2>
+			<h2><spring:message code="Login"/></h2>
 			<c:if test="${param.error != null}">        
 				<p>
-					Invalid username and password.
+					<spring:message code="PasswordInv"/>
 				</p>
 			</c:if>
 			<c:if test="${param.logout != null}">       
 				<p>
-					You have been logged out.
+					<spring:message code="loggedout"/>
 				</p>
 			</c:if>
 	
@@ -64,16 +68,16 @@
 	
 			<table>
 				<tr>
-					<td>User:</td>
+					<spring:message code="Username"/>
 					<td><input type='text' name='username'></td>
 				</tr>
 				<tr>
-					<td>Password:</td>
+					<spring:message code="Password"/>
 					<td><input type='password' name='password' /></td>
 				</tr>
 				<tr>
 					<td colspan='2'><input name="submit" type="submit"
-					  value="submit" /></td>
+					  value="<spring:message code="submit"/>" /></td>
 				</tr>
 			  </table>
 	
