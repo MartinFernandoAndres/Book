@@ -32,6 +32,7 @@
 		<property name="annotatedClasses">
 			<list>
 				<value>clases.Book</value>
+
 			</list>
 		</property>
 		<property name="hibernateProperties">
@@ -64,7 +65,6 @@
 	<bean id="bookDao" class="dao.BookDAO" />
 	
 	<!-- Internacionalizacion -->
-
 	<bean id="messageSource"
 		class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
 		<property name="basename" value="classpath:language" />

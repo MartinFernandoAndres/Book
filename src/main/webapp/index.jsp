@@ -32,7 +32,6 @@ a{
 	</div>
 </div>
 
-
 <body>		
 
 	<c:url value="/j_spring_security_logout" var="logoutUrl" />
@@ -45,15 +44,28 @@ a{
 			document.getElementById("logoutForm").submit();
 		}
 	</script>
-
-	<c:if test="${pageContext.request.userPrincipal.name != null}">
-		<h2>
-			Welcome : ${pageContext.request.userPrincipal.name} | <a
-				href="javascript:formSubmit()"> Logout</a>
-		</h2>
-	</c:if>
 	
 	<div class="container">
+	
+	<c:if test="${pageContext.request.userPrincipal.name != null}">
+			<spring:message code="Welcome"/> : ${pageContext.request.userPrincipal.name}
+			<c:if test="${pageContext.request.userPrincipal.name =='admin'}">
+				/ <spring:message code="Accesslevel"/>: (admin, user)
+			</c:if>
+			<c:if test="${pageContext.request.userPrincipal.name =='user'}">
+				/ <spring:message code="Accesslevel"/>: (user)
+			</c:if>
+			 | <a
+				href="javascript:formSubmit()"> <spring:message code="Logout"/></a>
+	</c:if>
+	
+	<br>
+	<br>
+	
+	<c:if test="${pageContext.request.userPrincipal.name =='admin'}">
+		<a href="<%=request.getContextPath()%>/Book/Users"><spring:message code="tercer_mensaje"/></a>
+		<br><br>
+	</c:if>
 
 		<a href="<%=request.getContextPath()%>/Book/"><spring:message code="primer_mensaje"/></a>
 		<br>

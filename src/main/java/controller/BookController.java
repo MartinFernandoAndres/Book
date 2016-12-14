@@ -11,7 +11,9 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import clases.Book;
+
 import dao.IBookDAO;
+
 
 @Controller
 @RequestMapping("/Book")
@@ -19,6 +21,7 @@ public class BookController {
 	
 	@Autowired
 	IBookDAO bookService;
+	
 	
 	@RequestMapping("/")
 	public ModelAndView List(){
@@ -34,6 +37,7 @@ public class BookController {
 		}
 		return bookService.searchBooksByLooseMatch(chars);
 	}
+
 	
 	@RequestMapping("/Lista")
 	public ModelAndView Listar(){
